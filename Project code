@@ -1,0 +1,261 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace PHKlassenBibliothek
+{
+    internal class Feature8
+    {
+
+        internal static void Feature_8()
+        {
+
+
+            string nochmal;
+            do
+            {
+                Console.Clear();
+
+                string gewicht;
+
+                double gewicht1 = 0;
+                double ergebnis = 0;
+
+                string AuswahlPlanet;
+                string Einheit;
+
+                string Anziehungskraft;
+                double Anziehungskraft1 = 0;
+
+                bool Gewichtwahl = true;
+
+                string Auswahl;
+                int Auswahl1 = 0;
+                bool Versuch1;
+
+                Console.WriteLine("Umrechnung eines Gewichtes auf einem anderen Planeten");
+                Console.WriteLine("Sie können jederzeit durch Eingabe von \"Abbruch\" das programm beenden");
+                Console.WriteLine("Sie können jederzeit durch Eingabe von \"Subexit\" das Menü aufrufen");
+                Console.WriteLine("Geben Sie das Gewünschte Gewicht an");
+                do
+                {
+
+                    gewicht = Console.ReadLine();
+
+                    if (gewicht == "Abbruch")
+                    {
+                        Environment.Exit(0);
+                    }
+                    else if (gewicht = "Subexit")
+                    {
+                        PHMenue.PH_Menue();
+                    }
+
+                    Versuch1 = double.TryParse(gewicht, out gewicht1);
+
+                    if (Versuch1 == false)
+                    {
+                        Console.WriteLine("FEHLER");
+                    }
+
+
+                } while (Versuch1 == false);
+
+
+                Console.WriteLine("Geben sie die Einheit an(Kilogramm, Tonnen, Gramm, Miligramm, Megatonnen, Pounds )");
+                
+                do
+                {
+                    Einheit = Console.ReadLine();
+
+                    switch (Einheit)
+                    {
+                        case "Kilogramm":
+                            Gewichtwahl = false;
+                            break;
+
+                        case "Tonnen":
+                            Gewichtwahl = false;
+                            break;
+
+                        case "Gramm":
+                            Gewichtwahl = false;
+                            break;
+
+                        case "Megatonnen":
+                            Gewichtwahl = false;
+                            break;
+
+                        case "Miligramm":
+                            Gewichtwahl = false;
+                            break;
+
+                        case "Pounds":
+                            Gewichtwahl = false;
+                            break;
+
+                        case "Abbruch":
+                            Environment.Exit(0);
+                            break;
+                        case "Subexit":
+                            PHMenue.PH_Menue();
+                            break;
+
+                        default:
+                            Console.WriteLine("Ungültige Eingabe");
+                            Gewichtwahl = true;
+                            break;
+
+                    }
+
+                } while (Gewichtwahl);
+
+
+                Console.WriteLine("Auf welchem Plantenen würden Sie es umgerechnet haben?");
+                Console.WriteLine("Die Auswahl ist wie Folgt:");
+                Console.WriteLine("1 = Merkur");
+                Console.WriteLine("2 = Venus");
+                Console.WriteLine("3 = Mars");
+                Console.WriteLine("4 = Jupiter");
+                Console.WriteLine("5 = Saturn");
+                Console.WriteLine("6 = Uranus");
+                Console.WriteLine("7 = Neptun");
+                Console.WriteLine("8 = Schwarzes loch(obwohl es kein Planet ist)");
+                Console.WriteLine("9 = Beliebiger Planet(Anziehungskraft m/s eingeben)");
+
+
+                do
+                {
+
+                    Auswahl = Console.ReadLine();
+                    if (Auswahl == "Abbruch")
+                    {
+                        Environment.Exit(0);
+                    }
+                    else if (gewicht = "Subexit")
+                    {
+                        PHMenue.PH_Menue();
+                    }
+
+                    Versuch1 = int.TryParse(Auswahl, out Auswahl1);
+
+                    if (Versuch1 == false)
+                    {
+                        Console.WriteLine("FEHLER");
+                    }
+
+
+
+
+
+                    switch (Auswahl1)
+                    {
+
+                        case 1:
+
+                            ergebnis = gewicht1 * (3.7 / 9.807);
+                            AuswahlPlanet = "Merkur";
+                            Console.WriteLine($"Das eingebene Gewicht {gewicht1:F2} in der Einheit {Einheit} würde auf dem Planeten {AuswahlPlanet} ungefähr {ergebnis:F2} {Einheit} wiegen");
+                            break;
+
+                        case 2:
+
+                            ergebnis = gewicht1 * (8.87 / 9.807);
+                            AuswahlPlanet = "Venus";
+                            Console.WriteLine($"Das eingebene Gewicht {gewicht1:F2} in der Einheit {Einheit} würde auf dem Planeten {AuswahlPlanet} ungefähr {ergebnis:F2} {Einheit} wiegen");
+                            break;
+
+                        case 3:
+
+                            ergebnis = gewicht1 * (3.721 / 9.807);
+                            AuswahlPlanet = "Mars";
+                            Console.WriteLine($"Das eingebene Gewicht {gewicht1:F2} in der Einheit {Einheit} würde auf dem Planeten {AuswahlPlanet} ungefähr {ergebnis:F2} {Einheit} wiegen");
+                            break;
+
+                        case 4:
+
+                            ergebnis = gewicht1 * (24.79 / 9.807);
+                            AuswahlPlanet = "Jupiter";
+                            Console.WriteLine($"Das eingebene Gewicht {gewicht1:F2} in der Einheit {Einheit} würde auf dem Planeten {AuswahlPlanet} ungefähr {ergebnis:F2} {Einheit} wiegen");
+                            break;
+
+                        case 5:
+
+                            ergebnis = gewicht1 * (11.44 / 9.807);
+                            AuswahlPlanet = "Saturn";
+                            Console.WriteLine($"Das eingebene Gewicht {gewicht1:F2} in der Einheit {Einheit} würde auf dem Planeten {AuswahlPlanet} ungefähr {ergebnis:F2} {Einheit} wiegen");
+                            break;
+
+                        case 6:
+
+                            ergebnis = gewicht1 * (8.87 / 9.807);
+                            AuswahlPlanet = "Uranus";
+                            Console.WriteLine($"Das eingebene Gewicht {gewicht1:F2} in der Einheit {Einheit} würde auf dem Planeten {AuswahlPlanet} ungefähr {ergebnis:F2} {Einheit} wiegen");
+                            break;
+
+                        case 7:
+
+                            ergebnis = gewicht1 * (11.15 / 9.807);
+                            AuswahlPlanet = "Neptun";
+                            Console.WriteLine($"Das eingebene Gewicht {gewicht1:F2} in der Einheit {Einheit} würde auf dem Planeten {AuswahlPlanet} ungefähr {ergebnis:F2} {Einheit} wiegen");
+                            break;
+
+                        case 8:
+
+
+                            AuswahlPlanet = "Schwarzes Loch";
+                            Console.WriteLine($"Das eingebene Gewicht {gewicht1:F2} in der Einheit {Einheit} würde in einem {AuswahlPlanet} unendlich {Einheit} wiegen");
+                            break;
+
+                        case 9:
+                            Console.WriteLine("Geben sie die Anziehungskraft ein");
+
+                            do
+                            {
+                                Anziehungskraft = Console.ReadLine();
+                                if (Anziehungskraft == "Abbruch")
+                                {
+                                    Environment.Exit(0);
+                                }
+
+                                Versuch1 = double.TryParse(Anziehungskraft, out Anziehungskraft1);
+
+                                if (Versuch1 == false)
+                                {
+                                    Console.WriteLine("FEHLER");
+                                }
+
+
+                                ergebnis = gewicht1 * (Anziehungskraft1 / 9.807);
+
+                            } while (Versuch1 == false);
+
+                            Console.WriteLine("Geben Sie den Namen des Planeten?");
+                            AuswahlPlanet = Console.ReadLine();
+
+                            Console.WriteLine($"Das eingebene Gewicht {gewicht1:F2} in der Einheit {Einheit} würde auf dem Planeten {AuswahlPlanet} ungefähr {ergebnis:F2} {Einheit} wiegen");
+                            break;
+
+                        default:
+
+                            Console.WriteLine("Falsche Eingabe");
+                            Versuch1 = false;
+                            break;
+                    };
+
+
+                } while (Versuch1 == false);
+
+                Console.WriteLine("Wiederholen?(n/y)");
+                nochmal = Console.ReadLine();
+
+            } while (nochmal == "y");
+            Console.Clear();
+            PHMenue.PH_Menue();
+        }
+
+    }
+}
